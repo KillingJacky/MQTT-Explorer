@@ -5,7 +5,7 @@ import { EventDispatcher } from '../../../events'
 export class TreeNode<ViewModel extends Destroyable> {
   public sourceEdge?: Edge<ViewModel>
   public message?: Message
-  public messageHistory: MessageHistory = new RingBuffer<Message>(20000, 100)
+  public messageHistory: MessageHistory = new RingBuffer<Message>(1000000, 1000)
   public viewModel?: ViewModel
   public edges: { [s: string]: Edge<ViewModel> } = {}
   public edgeArray: Array<Edge<ViewModel>> = []
